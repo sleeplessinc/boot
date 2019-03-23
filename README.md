@@ -1,4 +1,4 @@
-#boot
+#!/bin/bash
 
 repo=a1widgets
 
