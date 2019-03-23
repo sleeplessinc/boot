@@ -1,1 +1,2 @@
 0 0 * * * cd /root ; ./cert-bot renew
+1 0 * * * cd /root ; yum -y update

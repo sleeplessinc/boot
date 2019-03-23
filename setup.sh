@@ -1,29 +1,39 @@
 
+echo "Starting server setup"
+
+cd /root
+p="`pwd`"
+d=`basename $p`
+
+
 echo "Fixing localtime"
 pushd /etc
 sudo rm localtime
 sudo ln -s /usr/share/zoneinfo/US/Pacific localtime
 popd
 
-echo "yum update" 
-sudo yum -y update
+
+#echo "yum update" 
+#sudo yum -y update
+
 
 echo "yum install stuff"
 sudo yum -y install vim git wget
+
 
 echo "Configuring git"
 git config --global user.email "ops@sleepless.com"
 git config --global user.name "Sleepless Inc."
 
+
 echo "Making ~/bin"
 mkdir "$HOME/bin" &> /dev/null
+
 
 echo "Installing Joe's aliases"
 curl -s https://raw.githubusercontent.com/sleeplessinc/bash/master/bashrc > "$HOME/bin/joe.sh"
 echo "$HOME/bin/joe.sh" >> "$HOME/.bash_profile"
 
-p="`pwd`"
-d=`basename $p`
 
 echo "Installing node"
 nver="v10.15.3"
@@ -42,7 +52,5 @@ chmod a+x certbot-auto
 crontab crontab-certbot-renew
 
 
-
-
-
+echo "Done with server setup"
 
