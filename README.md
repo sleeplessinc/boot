@@ -1,8 +1,17 @@
 #!/bin/bash
 
+yum install git
+
 repo=a1widgets
 
-yum install git
-git clone "git@github.com:sleeplessinc/$repo.git"
-source "$repo/setup.sh"
+if pushd "$repo" ; then
+	git pull
+else
+	git clone "git@github.com:sleeplessinc/$repo.git"
+	pushd "$repo"
+fi
+source setup.sh
+popd
+
+
 
