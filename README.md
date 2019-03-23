@@ -1,16 +1,9 @@
+#!/bin/bash
+
+rep=a1widgets
 
 yum install git
-
-repo=a1widgets
-
-if pushd "$repo" ; then
-	git pull
-else
-	git clone "git@github.com:sleeplessinc/$repo.git"
-	pushd "$repo"
-fi
-source setup.sh
-popd
-
-
+rm -rf ./boot
+git clone "git@github.com:sleeplessinc/boot.git"
+source &> boot.log ./boot/setup.sh "$repo"
 
