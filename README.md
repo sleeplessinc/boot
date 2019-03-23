@@ -1,9 +1,7 @@
 #!/bin/bash
 
-repo=a1widgets
-
 yum -y install git
 rm -rf ./boot
 git clone "https://github.com/sleeplessinc/boot.git"
-source &> boot.log ./boot/setup.sh "$repo"
+source &> boot.log ./boot/setup.sh
 
