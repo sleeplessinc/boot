@@ -1,5 +1,6 @@
 
-	cd /
+	#!/bin/bash
+	cd /root
 	yum -y install git
 	rm -rf ./sleepless-boot
 	git clone "https://github.com/sleeplessinc/boot.git" sleepless-boot
@@ -17,4 +18,10 @@
 		fi
 		sleep 1
 	done
+
+
+	#cloud-config
+	runcmd:
+	  - touch ./fuck.txt
+
 
