@@ -2,6 +2,15 @@
 	#!/bin/bash
 	cd /root
 	yum -y install git
+	rm -rf ./boot
+	git clone "https://github.com/sleeplessinc/boot.git"
+	cd boot
+	source ./setup.sh &> log.txt
+
+
+	#!/bin/bash
+	cd /root
+	yum -y install git
 	rm -rf ./sleepless-boot
 	git clone "https://github.com/sleeplessinc/boot.git" sleepless-boot
 	cd sleepless-boot
