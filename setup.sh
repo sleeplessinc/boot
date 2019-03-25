@@ -46,10 +46,10 @@ ln -s "$p/node-$nver-linux-x64/bin/npm" "$HOME/bin/npm"
 export PATH="$HOME/bin:$PATH"
 
 
-echo "Installing certbot"
-wget https://dl.eff.org/certbot-auto
-chmod a+x certbot-auto
-crontab crontab-certbot-renew
+#echo "Installing certbot"
+#wget https://dl.eff.org/certbot-auto
+#chmod a+x certbot-auto
+#crontab crontab-certbot-renew
 
 
 echo "Done with server setup"
