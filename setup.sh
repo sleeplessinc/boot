@@ -32,7 +32,8 @@ mkdir "$HOME/bin" &> /dev/null
 
 echo "Installing Joe's aliases"
 curl -s https://raw.githubusercontent.com/sleeplessinc/bash/master/bashrc > "$HOME/bin/joe.sh"
-echo "$HOME/bin/joe.sh" >> "$HOME/.bash_profile"
+chmod u+x "$HOME/bin/joe.sh"
+echo "source $HOME/bin/joe.sh" >> "$HOME/.bash_profile"
 
 
 echo "Installing node"
